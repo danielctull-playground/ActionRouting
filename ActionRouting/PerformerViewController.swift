@@ -3,7 +3,7 @@ import UIKit
 
 class PerformerViewController: UIViewController, Performer {
 
-	func canPerform(_ action: Action) -> Bool {
+	func canPerform(action: Action) -> Bool {
 
 		guard
 			let screen = action as? Screen,
@@ -15,8 +15,14 @@ class PerformerViewController: UIViewController, Performer {
 		return true
 	}
 
-	func perform(_ action: Action) {
+	func perform(action: Action) -> Bool {
+
+		guard canPerform(action: action) else {
+			return false
+		}
+
 		performSegue(withIdentifier: "display", sender: self)
+		return true
 	}
 
 	@IBAction func unwind(_ sender: UIStoryboardSegue) {}

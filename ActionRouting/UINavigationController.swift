@@ -3,12 +3,8 @@ import UIKit
 
 extension UINavigationController {
 
-	override func show(lineage viewControllers: [UIViewController]) {
-
-		if let child = viewControllers.first {
-			popToViewController(child, animated: false)
-		}
-
-		super.show(lineage: viewControllers)
+	override open func show(child viewController: UIViewController) {
+		super.show(child: viewController)
+		popToViewController(viewController, animated: false)
 	}
 }

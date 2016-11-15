@@ -3,71 +3,30 @@ import UIKit
 
 extension UIViewController {
 
-	func route(action: Action) {
-
-		guard
-			let vc = viewController(for: action),
-			let performer = vc as? Performer
-		else {
-			print("CAN'T FIND VIEW CONTROLLER TO PERFORM ACTION:", action)
-			return
-		}
-
-		var lineage = vc.lineage
-		guard
-			let first = lineage.first
-		else {
-			return
-		}
-
-		lineage.removeFirst()
-		show(lineage: lineage)
-		performer.perform(action)
+	open func show(child viewController: UIViewController) {
+		show()
 	}
 
-	private func viewController(for action: Action) -> UIViewController? {
+	public func show() {
+		self.parent?.show(child: self)
+	}
+}
 
-		if let performer = self as? Performer, performer.canPerform(action) {
-			return self
+extension UIViewController: Router {
+
+	func route(action: Action) -> Bool {
+
+		if let performer = self as? Performer, performer.canPerform(action: action) {
+			show()
+			return performer.perform(action: action)
 		}
 
 		for viewController in childViewControllers {
-			if let performer = viewController.viewController(for: action) {
-				return performer
+			if viewController.route(action: action) {
+				return true
 			}
 		}
 
-		return nil
-	}
-
-	func show(lineage viewControllers: [UIViewController]) {
-
-		guard let child = viewControllers.first else {
-			return
-		}
-
-		var vcs = viewControllers
-		vcs.removeFirst()
-
-		child.show(lineage: vcs)
-	}
-
-	// Array of view controllers from the root to the receiver
-	var lineage: [UIViewController] {
-
-		var viewControllers: [UIViewController] = []
-		var viewController: UIViewController? = self
-
-		repeat {
-
-			if let viewController = viewController {
-				viewControllers.append(viewController)
-			}
-
-			viewController = viewController?.parent
-
-		} while viewController != nil
-
-		return viewControllers.reversed()
+		return false
 	}
 }

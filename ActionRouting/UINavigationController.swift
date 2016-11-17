@@ -11,4 +11,10 @@ extension UINavigationController {
 		CATransaction.commit()
 		CATransaction.flush()
 	}
+
+	// Provide the top-most view controller first by reversing the
+	// view controllers array.
+	override var routingChildViewControllers: [UIViewController] {
+		return viewControllers.reversed()
+	}
 }

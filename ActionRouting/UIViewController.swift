@@ -32,13 +32,26 @@ extension UIViewController: Router {
 			}
 		}
 
-		// Go through all the child view controllers.
-		for viewController in childViewControllers {
+		// Go through all the child view controllers in the 
+		// order given. Different view controllers will want 
+		// to traverse the children in different orders.
+		for viewController in routingChildViewControllers {
 			if viewController.route(action: action) {
 				return true
 			}
 		}
 
 		return false
+	}
+
+	private func dismissPresentedViewController() {
+		CATransaction.begin()
+		dismiss(animated: false, completion: nil)
+		CATransaction.commit()
+		CATransaction.flush()
+	}
+
+	var routingChildViewControllers: [UIViewController] {
+		return childViewControllers
 	}
 }

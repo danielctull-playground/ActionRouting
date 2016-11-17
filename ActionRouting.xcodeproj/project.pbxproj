@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		248E18941DDE4CC90095516B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248E18931DDE4CC90095516B /* Router.swift */; };
 		637B57F51DD608B300A8D71C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B57F41DD608B300A8D71C /* AppDelegate.swift */; };
 		637B57F71DD608B300A8D71C /* PerformerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B57F61DD608B300A8D71C /* PerformerViewController.swift */; };
 		637B57FA1DD608B300A8D71C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637B57F81DD608B300A8D71C /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		248E18931DDE4CC90095516B /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		637B57F11DD608B300A8D71C /* ActionRouting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActionRouting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		637B57F41DD608B300A8D71C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		637B57F61DD608B300A8D71C /* PerformerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformerViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				637B57FD1DD608B300A8D71C /* LaunchScreen.storyboard */,
 				637B58001DD608B300A8D71C /* Info.plist */,
 				637B58061DD608C100A8D71C /* Action.swift */,
+				248E18931DDE4CC90095516B /* Router.swift */,
 				637B58081DD608DA00A8D71C /* Performer.swift */,
 				637B580A1DD608F200A8D71C /* UIViewController.swift */,
 				637B580C1DD6090A00A8D71C /* UINavigationController.swift */,
@@ -117,7 +120,6 @@
 				TargetAttributes = {
 					637B57F01DD608B300A8D71C = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = B2M757K4LG;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -160,6 +162,7 @@
 			files = (
 				637B580F1DD6095E00A8D71C /* UITabBarController.swift in Sources */,
 				637B58091DD608DA00A8D71C /* Performer.swift in Sources */,
+				248E18941DDE4CC90095516B /* Router.swift in Sources */,
 				637B57F71DD608B300A8D71C /* PerformerViewController.swift in Sources */,
 				637B58071DD608C100A8D71C /* Action.swift in Sources */,
 				637B580D1DD6090A00A8D71C /* UINavigationController.swift in Sources */,
@@ -287,7 +290,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B2M757K4LG;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ActionRouting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.danieltull.ActionRouting;
@@ -300,7 +303,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B2M757K4LG;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ActionRouting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.danieltull.ActionRouting;
@@ -328,6 +331,7 @@
 				637B58051DD608B300A8D71C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

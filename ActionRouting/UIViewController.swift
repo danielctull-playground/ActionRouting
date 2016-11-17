@@ -22,6 +22,7 @@ extension UIViewController {
 
 		lineage.removeFirst()
 		show(lineage: lineage)
+
 		performer.perform(action)
 	}
 
